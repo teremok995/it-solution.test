@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="ShortLink\Model" platform="mysql" defaultEngine="MyISAM" version="3.0">
+
+	<object class="ShortLinkDB" table="ex_shortlink" extends="xPDO\Om\xPDOSimpleObject">
+	    <field key="link" dbtype="longtext" phptype="string" null="true" default="" />
+		<field key="md5link" dbtype="varchar" phptype="string" precision="32" null="true" default="" />
+		<field key="randlink" dbtype="varchar" phptype="string" precision="100" null="true" default="" />
+
+		<index alias="md5link" name="md5link" primary="false" unique="false" type="BTREE">
+			<column key="md5link" length="" collation="A" null="false" />
+		</index>
+        <index alias="randlink" name="randlink" primary="false" unique="false" type="BTREE">
+			<column key="randlink" length="" collation="A" null="false" />
+		</index>
+	</object>
+
+</model>
